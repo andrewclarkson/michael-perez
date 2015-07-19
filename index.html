@@ -2,9 +2,16 @@
 <html>
     <head>
         <meta charset='utf-8'>
+        <style>
+            .photo {
+                display: none;
+            }
+        </style>
     </head>
     <body>
-        <img id="photo" src="./cat-1.jpg">
+        <img class="photo" src="./cat-1.jpg">
+        <img class="photo" src="./cat-2.jpg">
+        <img class="photo" src="./cat-3.jpg">
         <script src="./jquery-1.11.3.min.js"></script>
         <script type="text/javascript">
 
@@ -53,14 +60,11 @@
                 if(docCookies.hasItem('counter')) {
                     var counter = docCookies.getItem('counter');
                     
-                    var choices = [
-                        './cat-1.jpg',
-                        './cat-2.jpg',
-                        './cat-3.jpg'
-                    ];
-                
-                    var source = choices[counter];
-                    $('#photo').attr('src', source);
+                    var choices = $('.photo');
+
+                    var choice = choices[counter];
+                    choice.show();
+
 
                     counter = parseInt(counter) + 1;
                     counter = counter % 3;
