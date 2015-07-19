@@ -53,17 +53,16 @@
                 if(docCookies.hasItem('counter')) {
                     var counter = docCookies.getItem('counter');
                     
-                    var choices = [
-                        './cat-1.jpg',
-                        './cat-2.jpg',
-                        './cat-3.jpg'
-                    ];
-                
-                    var source = choices[counter];
-                    $('#photo').attr('src', source);
+                    var choices = $('.photo');
+                    var choice = choices[counter];
+                    $(choice).show();
+                    counter = parseInt(counter) + 1;
+                    counter = counter % 3;
+                    docCookies.setItem('counter', counter);
                 } else {
                     docCookies.setItem('counter', '1');
-                }
+                }           
+ 
             });            
         </script>
     </body>
