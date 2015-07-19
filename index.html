@@ -61,6 +61,12 @@
                 
                     var source = choices[counter];
                     $('#photo').attr('src', source);
+
+                    counter = counter + 1;
+                    docCookies.setItem('counter', counter);
+
+
+
                 } else {
                     docCookies.setItem('counter', '1');
                 }
