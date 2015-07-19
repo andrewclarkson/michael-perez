@@ -63,6 +63,7 @@
                     $('#photo').attr('src', source);
 
                     counter = parseInt(counter) + 1;
+                    counter = counter % 3;
                     docCookies.setItem('counter', counter);
 
 
